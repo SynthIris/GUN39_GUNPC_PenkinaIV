@@ -15,11 +15,19 @@ namespace HomeWork
                              "July", "August", "September", "October", "November", "December"};
 
             // ЗАДАНИЕ 3 
-            int[,] matrix = {
-                {2, 3, 4},
-                {4, 9, 16},
-                {8, 27, 64}
-            };
+            int[,] matrix = new int[3, 3];
+
+            matrix[0, 0] = (int)Math.Pow(2, 1);
+            matrix[0, 1] = (int)Math.Pow(3, 1);
+            matrix[0, 2] = (int)Math.Pow(4, 1);
+
+            matrix[1, 0] = (int)Math.Pow(2, 2);
+            matrix[1, 1] = (int)Math.Pow(3, 2);
+            matrix[1, 2] = (int)Math.Pow(4, 2);
+
+            matrix[2, 0] = (int)Math.Pow(2, 3);
+            matrix[2, 1] = (int)Math.Pow(3, 3);
+            matrix[2, 2] = (int)Math.Pow(4, 3);
 
             // ЗАДАНИЕ 4 
 

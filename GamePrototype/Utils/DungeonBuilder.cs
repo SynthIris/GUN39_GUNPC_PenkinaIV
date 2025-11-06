@@ -1,5 +1,6 @@
 ﻿using GamePrototype.Dungeon;
 using GamePrototype.Items.EconomicItems;
+using GamePrototype.Items.EquipItems;
 
 namespace GamePrototype.Utils
 {
@@ -10,20 +11,20 @@ namespace GamePrototype.Utils
             var enter = new DungeonRoom("Enter");
             var monsterRoom = new DungeonRoom("Monster", UnitFactoryDemo.CreateGoblinEnemy());
             var emptyRoom = new DungeonRoom("Empty");
-            var lootRoom = new DungeonRoom("Loot1", new Gold());
-            var lootStoneRoom = new DungeonRoom("Loot1", new Grindstone("Stone"));
+            var rangeWeaponRoom = new DungeonRoom("Range Weapon", new RangeWeapon(8, 12, "Wooden Bow"));
+            var helmetRoom = new DungeonRoom("Helmet", new Helmet(5, 10, "Iron Helmet"));
             var finalRoom = new DungeonRoom("Final", new Grindstone("Stone1"));
 
             enter.TrySetDirection(Direction.Right, monsterRoom);
             enter.TrySetDirection(Direction.Left, emptyRoom);
 
-            monsterRoom.TrySetDirection(Direction.Forward, lootRoom);
+            monsterRoom.TrySetDirection(Direction.Forward, rangeWeaponRoom);
             monsterRoom.TrySetDirection(Direction.Left, emptyRoom);
 
-            emptyRoom.TrySetDirection(Direction.Forward, lootStoneRoom);
+            emptyRoom.TrySetDirection(Direction.Forward, helmetRoom);
 
-            lootRoom.TrySetDirection(Direction.Forward, finalRoom);
-            lootStoneRoom.TrySetDirection(Direction.Forward, finalRoom);
+            rangeWeaponRoom.TrySetDirection(Direction.Forward, finalRoom);
+            helmetRoom.TrySetDirection(Direction.Forward, finalRoom);
 
             return enter;
         }
